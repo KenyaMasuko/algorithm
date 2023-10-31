@@ -1,16 +1,20 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main () {
-  int N,X,Y;
-  cin >> N >> X >> Y;
+int N, S;
+long long Answer = 0;
 
-  int count = 0;
+int main () {
+  cin >> N >> S;
+
+ // Nは1以上
   for(int i = 1; i <= N; i++) {
-    if(i % X == 0 || i % Y == 0) count++;
+    for(int j = 1; j <= N; j++) {
+      if(i + j <= S) Answer++;
+    }
   }
 
-  cout << count << endl;
+  cout << Answer << endl;
   return 0;
 }
 
